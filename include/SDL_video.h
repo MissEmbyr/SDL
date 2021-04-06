@@ -157,8 +157,9 @@ typedef enum
     SDL_WINDOWEVENT_HIDDEN,         /**< Window has been hidden */
     SDL_WINDOWEVENT_EXPOSED,        /**< Window has been exposed and should be
                                          redrawn */
-    SDL_WINDOWEVENT_MOVED,          /**< Window has been moved to data1, data2
-                                     */
+    SDL_WINDOWEVENT_MOVED,          /**< Window has been moved to data1, data2 */
+
+    SDL_WINDOWEVENT_RESIZING,
     SDL_WINDOWEVENT_RESIZED,        /**< Window has been resized to data1xdata2 */
     SDL_WINDOWEVENT_SIZE_CHANGED,   /**< The window size has changed, either as
                                          a result of an API call or through the

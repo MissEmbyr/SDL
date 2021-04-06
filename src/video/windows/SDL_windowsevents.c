@@ -531,6 +531,23 @@ WIN_WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
         return 0;
 
     switch (msg) {
+    case WM_ENTERSIZEMOVE:
+        {
+            SetTimer(hwnd, 1, USER_TIMER_MINIMUM, NULL);
+        }
+        break;
+
+    case WM_EXITSIZEMOVE:
+        {
+            KillTimer(hwnd, 1);
+        }
+        break;
+
+    case WM_TIMER:
+        {
+            SDL_SendWindowEvent(data->window, SDL_WINDOWEVENT_RESIZING, 0, 0);
+        }
+        break;
 
     case WM_SHOWWINDOW:
         {
